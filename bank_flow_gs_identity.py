@@ -10,7 +10,7 @@ import numpy as np
 from PIL import Image
 from glob import glob
 
-image = cv2.imread('E://liushui-images/gs-zh.jpg', 1)
+image = cv2.imread('./test_images/gs.jpg', 1)
 #二值化
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 binary = cv2.adaptiveThreshold(~gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 35, -5)
