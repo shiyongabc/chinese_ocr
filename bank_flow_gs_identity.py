@@ -75,6 +75,7 @@ mylisty.append(myys[i])
 # print(len(mylisty))
 
 i=0
+t = time.time()
 for i in range(13):  #只有4行有效数字
     ROI = image[mylisty[i]:mylisty[i+1],mylistx[9]:mylistx[10]] #减去3的原因是由于我缩小ROI范围
 #    cv2.imshow("add Image",ROI)
@@ -89,3 +90,4 @@ for i in range(13):  #只有4行有效数字
     for key in result:
         print(result[key][1])
     i=i+1
+print("tsk complete, it took {:.3f}s".format(time.time() - t))
