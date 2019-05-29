@@ -75,7 +75,7 @@ mylisty.append(myys[i])
 # print(len(mylisty))
 
 i=0
-for i in range(3):  #只有4行有效数字
+for i in range(13):  #只有4行有效数字
     ROI = image[mylisty[i]:mylisty[i+1],mylistx[9]:mylistx[10]] #减去3的原因是由于我缩小ROI范围
 #    cv2.imshow("add Image",ROI)
 #    cv2.waitKey(0)
