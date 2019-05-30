@@ -25,7 +25,7 @@ def identify_text():
         result, image_framed = ocr.model(image)
         for key in result:
             print(result[key][1])
-            res=result[key][1]
+            res = res.join(result[key][1])
         if (os.path.exists(upload_path)):
             os.remove(upload_path)
     return jsonify({'result': res})
