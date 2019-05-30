@@ -14,8 +14,10 @@ tasks = []
 def identify_text():
     if request.method == 'POST':
         f = request.files['file']
-        basepath = os.path.dirname(__file__)  # 当前文件所在路径
-        upload_path = os.path.join(basepath, 'static/uploads',f.filename)  # 注意：没有的文件夹一定要先创建，不然会提示没有该路径
+        # basepath = os.path.dirname(__file__)  # 当前文件所在路径
+        # upload_path = os.path.join(basepath, 'static/uploads',f.filename)  # 注意：没有的文件夹一定要先创建，不然会提示没有该路径
+        upload_path = os.path.join(os.getcwd(), 'static/uploads/', f.filename)
+        print(upload_path)
         f.save(upload_path)
         image = cv2.imread(upload_path, 1)
         #result=ocrText(upload_path)
@@ -32,8 +34,10 @@ def identify_text():
 def bank_flow():
     if request.method == 'POST':
         f = request.files['file']
-        basepath = os.path.dirname(__file__)  # 当前文件所在路径
-        upload_path = os.path.join(basepath, 'static/uploads',f.filename)  # 注意：没有的文件夹一定要先创建，不然会提示没有该路径
+        #basepath = os.path.dirname(__file__)  # 当前文件所在路径
+        #upload_path = os.path.join(basepath, 'static/uploads',f.filename)  # 注意：没有的文件夹一定要先创建，不然会提示没有该路径
+        upload_path=os.path.join(os.getcwd(), 'static/uploads/',f.filename)
+        print(upload_path)
         f.save(upload_path)
         result=bank_flow_gs_identity.bank_flow_identity(upload_path)
 
